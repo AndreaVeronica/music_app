@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <% include ../partials/head %>
+</head>
+
+<body class="container-fluid">
+  <header>
+    <% include ../partials/header %>
+  </header>
+
+  <main>
+    <div>
+      <h3>SHOW</h3>
+      <p><b>Artist: </b><%= song.artist %></p>
+      <p><b>Album: </b><%= song.album %></p>
+      <p><b>Title: </b><%= song.title %></p>
+      <p><b>ID: </b><%= song._id %></p>
+    </div>
+
+    <a href="/songs" class="btn btn-primary">Back</a>
+    <a href="/songs/<%= song._id %>/edit" class="btn btn-danger">Edit</a>
+  </main>
+
+  <footer>
+    <% include ../partials/footer %>
+  </footer>
+</body>
+</html>

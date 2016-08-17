@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <% include ../partials/head %>
+</head>
+
+<body class="container-fluid">
+  <header>
+    <% include ../partials/header %>
+  </header>
+
+  <main>
+    <div>
+      <h3>Songs</h3>
+      <% songs.forEach(function(song) { %>
+        <h4>
+          <form method="POST" action="/songs/<%= song._id %>?_method=DELETE">
+            <a href="/songs/<%= song._id %>">
+              <%= song.artist + ' - ' + song.album + ' - ' + song.title %>
+            </a>
+            <button type="submit" class="btn btn-xs btn-danger">Delete</button>
+          </form>
+        </h4>
+      <% }) %>
+    </div>
+    <a href="/songs/new" class="btn btn-primary">New</a>
+  </main>
+
+  <footer>
+    <% include ../partials/footer %>
+  </footer>
+</body>
+</html>
