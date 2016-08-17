@@ -102,6 +102,11 @@ router.delete('/:id', function(req, res, next) {
   });
 });
 
-
+// SHARE
+router.get('/:id/share', function(req, res, next) {
+  var song = currentUser.songs.id(req.params.id);
+    if (!song) return next(makeError(res, 'Document not found', 404));
+    res.render('songs/share', { song: song, message: req.flash() });
+});
 
 module.exports = router;
