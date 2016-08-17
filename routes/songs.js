@@ -96,7 +96,7 @@ router.delete('/:id', function(req, res, next) {
       currentUser.songs.splice(index, 1);
       currentUser.save()
       .then(function(saved) {
-      res.redirect('/todos');
+      res.redirect('/songs');
       }, function(err) {
       return next(err);
   });
