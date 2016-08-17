@@ -6,16 +6,13 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 
-// Connect to database
-mongoose.connect('mongodb://localhost/todos');
-
 var routes = require('./routes/index');
 var users = require('./routes/users');
 
 var app = express();
 
 // Connect to database
-mongoose.connect('mongodb://localhost/todos');
+mongoose.connect('mongodb://localhost/songs');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
